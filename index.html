@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KMBD Desktop Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <div class="avatar">🛡️</div>
+      <h1>KMBD Desktop Portal</h1>
+      <p>Interner Desktop-Zugang für Demo-Module, Formulare und Chat.</p>
+      <label>Benutzername
+        <input id="username" type="text" placeholder="KMBD" autocomplete="username" required />
+      </label>
+      <label>Passwort
+        <input id="password" type="password" placeholder="ausbilder1" autocomplete="current-password" required />
+      </label>
+      <button type="submit">Einloggen</button>
+      <small>Demo-Zugang: <b>KMBD</b> / <b>ausbilder1</b></small>
+      <p id="loginError" class="error"></p>
+    </form>
+  </main>
+
+  <section id="desktop" class="desktop hidden">
+    <div class="desktop-topbar">
+      <strong>KMBD-NRW · Desktop Portal</strong>
+      <span id="currentUser"></span>
+      <span id="clock"></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="icons">
+      <button class="desktop-icon" data-app="dashboard"><span>📊</span>Dashboard</button>
+      <button class="desktop-icon" data-app="info"><span>ℹ️</span>Infoseite</button>
+      <button class="desktop-icon" data-app="forms"><span>📋</span>Formulare</button>
+      <button class="desktop-icon" data-app="lexicon"><span>📚</span>Lexikon</button>
+      <button class="desktop-icon" data-app="chat"><span>💬</span>Interner Chat</button>
+      <button class="desktop-icon" data-app="users"><span>👥</span>Benutzer</button>
+      <button class="desktop-icon" data-app="records"><span>🗂️</span>Personalakten</button>
+      <button class="desktop-icon" data-app="tasks"><span>✅</span>Aufgaben</button>
+      <button class="desktop-icon" data-app="notes"><span>📝</span>Notizen</button>
+      <button class="desktop-icon" data-app="files"><span>📁</span>Dateien</button>
+      <button class="desktop-icon" data-app="settings"><span>⚙️</span>Einstellungen</button>
+    </div>
+
+    <div id="windows"></div>
+
+    <footer class="taskbar">
+      <button class="start-btn">◉ Start</button>
+      <div id="taskButtons" class="task-buttons"></div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
