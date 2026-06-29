@@ -3,48 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KMBD Portal Desktop</title>
+  <title>KMBD Portal</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div id="loginScreen" class="login-screen">
-    <div class="login-card glass">
-      <div class="brand-row">
-        <div class="brand-emblem">K</div>
-        <div><h1>KMBD Portal</h1><p>Landespolizei Köln · GTA-RP Verwaltung</p></div>
+    <div class="login-panel glass">
+      <div class="brand">
+        <div class="crest">KM</div>
+        <div>
+          <h1>KMBD Portal</h1>
+          <p>Landespolizei Köln · Interner Arbeitsbereich</p>
+        </div>
       </div>
-      <label>Benutzername<input id="loginUser" autocomplete="username" value="KMBD" /></label>
-      <label>Passwort<input id="loginPass" type="password" autocomplete="current-password" value="ausbilder1" /></label>
-      <button id="loginBtn" class="primary">Einloggen</button>
+      <label>Benutzername<input id="loginUser" value="KMBD" autocomplete="username"></label>
+      <label>Passwort<input id="loginPass" type="password" value="ausbilder1" autocomplete="current-password"></label>
+      <button id="loginBtn" class="primary">Anmelden</button>
       <p id="loginError" class="error"></p>
-      <div class="hint"><b>Demo-Logins:</b> KMBD / ausbilder1 · Leitung / leitung123 · Anwärter / test123</div>
+      <div class="login-info">Master: <b>KMBD / ausbilder1</b><br>Weitere Demo-Zugänge: Leitung / leitung123 · Anwärter / test123</div>
     </div>
   </div>
 
   <main id="desktop" class="desktop hidden">
-    <section class="desktop-icons" id="desktopIcons"></section>
-    <section class="widget-zone">
-      <div class="desktop-widget glass">
-        <div class="widget-title">Heute im Dienst</div>
-        <div class="widget-big" id="clock">--:--</div>
-        <div class="widget-sub">KMBD Bereitschaft · Status Grün</div>
+    <div class="shade"></div>
+    <section id="desktopIcons" class="desktop-icons"></section>
+
+    <aside class="right-widgets">
+      <div class="widget glass">
+        <span class="overline">Bereitschaft</span>
+        <strong id="clockBig">--:--</strong>
+        <small>KMBD Köln · Status einsatzbereit</small>
       </div>
-      <div class="desktop-widget glass compact">
-        <div class="widget-title">Schnellstatus</div>
-        <div class="status-row"><span>Einsätze</span><b>3 offen</b></div>
-        <div class="status-row"><span>Personal</span><b>12 aktiv</b></div>
-        <div class="status-row"><span>Material</span><b>87%</b></div>
+      <div class="widget glass">
+        <span class="overline">Nächster Termin</span>
+        <div id="nextEvent" class="next-event">Keine Termine</div>
       </div>
-    </section>
+      <div class="widget glass mini-status">
+        <div><b id="openCount">0</b><span>offen</span></div>
+        <div><b id="teamCount">0</b><span>Personal</span></div>
+        <div><b id="msgCount">0</b><span>Chat</span></div>
+      </div>
+    </aside>
+
     <section id="windows"></section>
+
     <nav class="taskbar glass">
-      <button id="startBtn" class="start-button">▦</button>
-      <div class="task-search">Suche im KMBD Portal</div>
+      <button id="startBtn" class="start-button" title="Start">▦</button>
+      <div class="search-box">KMBD durchsuchen</div>
       <div id="taskApps" class="task-apps"></div>
-      <div class="tray"><span id="trayUser"></span><span id="trayTime"></span><button id="logoutBtn">⏻</button></div>
+      <div class="tray"><span id="trayUser"></span><span id="trayTime"></span><button id="logoutBtn" title="Abmelden">⏻</button></div>
     </nav>
+
     <div id="startMenu" class="start-menu glass hidden">
-      <div class="start-header"><b>KMBD Portal</b><span id="startUser"></span></div>
+      <div class="start-top"><b>Start</b><span id="startUser"></span></div>
       <div id="startApps" class="start-grid"></div>
     </div>
   </main>
