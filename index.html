@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desktop Webportal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <div class="avatar">⌘</div>
+      <h1>Webportal Login</h1>
+      <p>Melde dich an, um den Desktop zu öffnen.</p>
+      <label>Benutzername
+        <input id="username" type="text" placeholder="admin" autocomplete="username" required />
+      </label>
+      <label>Passwort
+        <input id="password" type="password" placeholder="1234" autocomplete="current-password" required />
+      </label>
+      <button type="submit">Einloggen</button>
+      <small>Demo-Zugang: <b>admin</b> / <b>1234</b></small>
+      <p id="loginError" class="error"></p>
+    </form>
+  </main>
+
+  <section id="desktop" class="desktop hidden">
+    <div class="desktop-topbar">
+      <strong>Mein Webportal</strong>
+      <span id="clock"></span>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="icons">
+      <button class="desktop-icon" data-app="register"><span>🛡️</span>Register</button>
+      <button class="desktop-icon" data-app="dashboard"><span>📊</span>Dashboard</button>
+      <button class="desktop-icon" data-app="notes"><span>📝</span>Notizen</button>
+      <button class="desktop-icon" data-app="tasks"><span>✅</span>Aufgaben</button>
+      <button class="desktop-icon" data-app="files"><span>📁</span>Dateien</button>
+      <button class="desktop-icon" data-app="settings"><span>⚙️</span>Einstellungen</button>
+    </div>
+
+    <div id="windows"></div>
+
+    <footer class="taskbar">
+      <button class="start-btn">◉ Start</button>
+      <div id="taskButtons" class="task-buttons"></div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
