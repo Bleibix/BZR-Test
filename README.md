@@ -1,6 +1,6 @@
-# KMBD Portal – GTA-RP Demo
+# KMBD Portal Desktop Pro
 
-Statische Demo für GitHub Pages.
+Eine realistischere Desktop-Demo für deinen GTA-RP KMBD bei der Landespolizei Köln.
 
 ## Login
 - KMBD / ausbilder1
@@ -8,16 +8,26 @@ Statische Demo für GitHub Pages.
 - Anwärter / test123
 
 ## Enthalten
-- Desktop-Optik mit Icons und Fenstern
+- Windows-ähnlicher Desktop
+- Startmenü, Taskleiste, Fenster
+- Hellmodus, Dunkelmodus, Kontrastmodus
+- auswählbare Hintergründe inkl. KMBD-rotem Hintergrund
 - Dashboard
-- Einsatzverwaltung
+- Einsätze
 - Personalakten
 - Dienstplan
+- interner Chat als lokale Demo
 - Formulare KB-01 bis KB-05
-- Fahrzeuge & Material
+- Materialverwaltung
+- Fahrzeuge
 - Lexikon
-- Interner Chat als lokale Demo
-- Verwaltung
+- Dokumente
+- Anleitung
 
-## Hinweis
-Der Chat und die Daten speichern aktuell nur im Browser über LocalStorage. Für echten Mehrbenutzer-Live-Chat braucht das Projekt später ein Backend, z. B. Firebase, Supabase oder Node.js + Datenbank.
+## Wichtig
+Diese Version ist eine statische Demo. Sie speichert Daten nur lokal im Browser per localStorage.
+Für echten Login, echten Live-Chat und gemeinsame Daten aller Spieler brauchst du später ein Backend, z.B. Supabase, Firebase oder Node.js.
+
+## GitHub Pages
+Die Datei `index.html` muss im Hauptordner deines Repositories liegen.
+Danach in GitHub: Settings → Pages → Deploy from branch → main → /root.

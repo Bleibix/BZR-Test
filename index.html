@@ -3,59 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KMBD Portal | RP Einsatzsystem</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>KMBD Portal Desktop</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div id="login" class="login-screen">
-    <div class="login-card">
-      <div class="badge">LPK</div>
-      <h1>KMBD Portal</h1>
-      <p>Landespolizei Köln · Kampfmittelbeseitigungsdienst</p>
-      <label>Benutzername</label>
-      <input id="username" value="KMBD" autocomplete="username" />
-      <label>Passwort</label>
-      <input id="password" type="password" value="ausbilder1" autocomplete="current-password" />
-      <button onclick="login()">Anmelden</button>
-      <small>Demo-Login: KMBD / ausbilder1 · Leitung / leitung123 · Anwärter / test123</small>
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card glass">
+      <div class="brand-row">
+        <div class="brand-emblem">K</div>
+        <div><h1>KMBD Portal</h1><p>Landespolizei Köln · GTA-RP Verwaltung</p></div>
+      </div>
+      <label>Benutzername<input id="loginUser" autocomplete="username" value="KMBD" /></label>
+      <label>Passwort<input id="loginPass" type="password" autocomplete="current-password" value="ausbilder1" /></label>
+      <button id="loginBtn" class="primary">Einloggen</button>
+      <p id="loginError" class="error"></p>
+      <div class="hint"><b>Demo-Logins:</b> KMBD / ausbilder1 · Leitung / leitung123 · Anwärter / test123</div>
     </div>
   </div>
 
   <main id="desktop" class="desktop hidden">
-    <header class="topbar">
-      <div><strong>KMBD Einsatzportal</strong><span id="roleLabel"></span></div>
-      <div id="clock"></div>
-    </header>
-
-    <section class="icons">
-      <button class="icon" onclick="openApp('dashboard')"><span>📊</span>Dashboard</button>
-      <button class="icon" onclick="openApp('einsatz')"><span>🚨</span>Einsätze</button>
-      <button class="icon" onclick="openApp('akten')"><span>👥</span>Personalakten</button>
-      <button class="icon" onclick="openApp('dienstplan')"><span>📅</span>Dienstplan</button>
-      <button class="icon" onclick="openApp('formulare')"><span>📝</span>Formulare</button>
-      <button class="icon" onclick="openApp('material')"><span>🚐</span>Fahrzeuge & Material</button>
-      <button class="icon" onclick="openApp('lexikon')"><span>📚</span>Lexikon</button>
-      <button class="icon" onclick="openApp('chat')"><span>💬</span>Interner Chat</button>
-      <button class="icon" onclick="openApp('admin')"><span>⚙️</span>Verwaltung</button>
+    <section class="desktop-icons" id="desktopIcons"></section>
+    <section class="widget-zone">
+      <div class="desktop-widget glass">
+        <div class="widget-title">Heute im Dienst</div>
+        <div class="widget-big" id="clock">--:--</div>
+        <div class="widget-sub">KMBD Bereitschaft · Status Grün</div>
+      </div>
+      <div class="desktop-widget glass compact">
+        <div class="widget-title">Schnellstatus</div>
+        <div class="status-row"><span>Einsätze</span><b>3 offen</b></div>
+        <div class="status-row"><span>Personal</span><b>12 aktiv</b></div>
+        <div class="status-row"><span>Material</span><b>87%</b></div>
+      </div>
     </section>
-
     <section id="windows"></section>
-
-    <footer class="taskbar">
-      <button onclick="toggleStart()">▦ Start</button>
-      <div id="openApps"></div>
-      <button onclick="logout()">Abmelden</button>
-    </footer>
-
-    <aside id="startMenu" class="start-menu hidden">
-      <h3>KMBD Menü</h3>
-      <button onclick="openApp('dashboard')">Dashboard öffnen</button>
-      <button onclick="openApp('einsatz')">Neuen Einsatz erfassen</button>
-      <button onclick="openApp('chat')">Chat öffnen</button>
-      <button onclick="logout()">Abmelden</button>
-    </aside>
+    <nav class="taskbar glass">
+      <button id="startBtn" class="start-button">▦</button>
+      <div class="task-search">Suche im KMBD Portal</div>
+      <div id="taskApps" class="task-apps"></div>
+      <div class="tray"><span id="trayUser"></span><span id="trayTime"></span><button id="logoutBtn">⏻</button></div>
+    </nav>
+    <div id="startMenu" class="start-menu glass hidden">
+      <div class="start-header"><b>KMBD Portal</b><span id="startUser"></span></div>
+      <div id="startApps" class="start-grid"></div>
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
